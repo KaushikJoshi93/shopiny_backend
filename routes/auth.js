@@ -64,5 +64,19 @@ router.post("/login" , async(req,res)=>{
 })
 
 
+router.get("/logout" , async(req , res)=>{
+    try {
+        console.log(req.cookies)
+        if(req.cookies.token){
+            console.log("inside")
+          return res.clearCookie("token").status(200).json({message:"Logged Out"})
+        }
+        return res.status(200).json({message:"Logged Out"});
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
+
+
 
 export default router;
