@@ -50,6 +50,7 @@ router.post("/login" , async(req,res)=>{
                         credentials:true,
                         httpOnly:true,
                         sameSite:"none",
+                        secure:true,
                         expires:new Date(Date.now() + 3 * 24 * 60 *60*1000),
                     }).status(200).json(others);
                 }
