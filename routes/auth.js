@@ -49,7 +49,7 @@ router.post("/login" , async(req,res)=>{
                     return res.cookie("token" , accessToken , {
                         credentials:true,
                         httpOnly:true,
-                        // sameSite:"none",
+                        sameSite:"none",
                         expires:new Date(Date.now() + 3 * 24 * 60 *60*1000),
                     }).status(200).json(others);
                 }
